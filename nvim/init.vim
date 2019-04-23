@@ -1,3 +1,5 @@
+filetype plugin indent on
+
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -19,6 +21,9 @@ Plug 'tikhomirov/vim-glsl'
 "Plug 'vim-syntastic/syntastic'
 " Linting/checking
 "Plug 'w0rp/ale'
+Plug 'vhdirk/vim-cmake'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Initialize plugin system
 call plug#end()
@@ -52,6 +57,9 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+
+
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
@@ -70,3 +78,4 @@ command Lint cexpr system('scripts/lint.sh')
 autocmd QuickFixCmdPost [^l]* cwindow
 command MakeDebugQF cexpr system('make Debug -j12 \|& grep error:')
 command MakeQF cexpr system('make -j12 \|& grep error:')
+filetype plugin indent on
