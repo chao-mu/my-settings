@@ -40,7 +40,7 @@ autocmd! InsertEnter * if ! didit | call feedkeys("\<C-\>\<C-o>:nohlsearch|let d
 autocmd! InsertLeave * let didit = 0
 
 " Delete trailing whitespacau 
-autocmd FileType c,cpp,python,ruby,html autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType c,cpp,glsl,yaml,python,ruby,html,javascript autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " Color scheme
 colorscheme tender
@@ -50,7 +50,7 @@ map <F5> :FSHere<CR>
 
 " openframeworks C++ 
 :nnoremap <leader>md :MakeDebugQF<CR>
-:nnoremap <leader>mm :MakeQF<CR>
+:nnoremap <leader>mm :make<CR>
 :nnoremap <leader>ml :Lint<CR>
 
 set expandtab
